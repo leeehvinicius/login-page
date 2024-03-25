@@ -1,24 +1,26 @@
 <main>
     <section class="form-section">
-        <img src="/assets/svg/logo.svg" alt="">
-        
-        <h2>{{ title }}</h2>
-        <ng-content></ng-content>
-        <div class="btn-wrapper">
-            <button class="btn-primary">{{primaryBtnText}}</button>
-        <div class="divider">
-            <div></div>
-            <span>or</span>
-            <div></div>
-        </div>
-        <button class="btn-secondary">{{secondaryBtnText}}</button>
-
-        </div>
-        
-
-    </section >
+        <img src="/assets/svg/logo.svg"/>
+       <h2>{{ title }}</h2>
+       <ng-content></ng-content>
+       <div class="btn-wrapper">
+            <button 
+                class="btn-primary" 
+                (click)="submit()"
+                [disabled]="disablePrimaryBtn"
+            >
+                {{ primaryBtnText }}
+            </button>
+            <!-- <div class="divider">
+                <div></div>
+                <span>or</span>
+                <div></div>
+            </div>
+            <button class="btn-secondary" (click)="navigate()">{{ secondaryBtnText }}</button> -->
+       </div>
+    </section>
     <section class="main-section">
-        <h1>You Shold,MoveIt</h1>
-        <img src="/assets/svg/main-illustration.svg" alt="">
+        <h1>Bem Vindo, Sistema KL!</h1>
+        <img src="/assets/svg/main-illustration.svg"/>
     </section>
 </main>

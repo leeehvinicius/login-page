@@ -1,11 +1,30 @@
-<app-default-login-layout 
-title="Login into your account"
-primaryBtnText="Login Now"
-secondaryBtnText="Sigup Now"
+<app-default-login-layout
+    title="Logar no Sistema KL"
+    primaryBtnText="Logar"
+    secondaryBtnText="Signup Now"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
 >
-<form [formGroup="loginform"]>
-
-<p>Heelo Word</p>
-</form>
-
+<form [formGroup]="loginForm">
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Login"
+            placeholder="Login"
+        >
+            <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Senha"
+            placeholder="senha"
+        >
+        <img src="/assets/svg/password-icon.svg"/>
+    </app-primary-input>
+    <!-- <span>Forgot password?</span> -->
+    </form>
 </app-default-login-layout>
